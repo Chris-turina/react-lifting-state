@@ -79,9 +79,10 @@ class App extends React.Component{
 
   }
 
-  handleVote(thing) {
-    console.log(thing)
-    update thing from master list...
+  handleVote(direction) {
+    console.log(direction)
+    this.setState({counter: this.state.counter + direction});
+    console.log(this.state.counter)
 
   }
 
@@ -98,7 +99,7 @@ class App extends React.Component{
         <Switch>
           <Route exact path='/' render={()=> <FeedPage
               postFeed={this.state.masterPostArray}
-              onVoteSort={this.handleVote}
+              onVoteChange={this.handleVote}
             />} />
           <Route path='/newpostform' render={()=> <NewPostForm onNewPostCreation={this.handleAddingPostToList} />} />
         </Switch>

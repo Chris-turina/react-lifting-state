@@ -4,8 +4,6 @@ import PostCard from './PostCard';
 
 
 function FeedPage(props) {
-
-  // console.log(props.postFeed);
   return(
     <div>
       {props.postFeed.map((postArray,index) =>
